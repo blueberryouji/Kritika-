@@ -1,2 +1,0 @@
-# Kritika-
-For twin 
