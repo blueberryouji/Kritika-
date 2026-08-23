@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Chaotic Twin 💗</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink: #ff6b9d;
+      --pink-soft: #ff9bd1;
+      --pink-light: #ffe4f0;
+      --purple: #9b6dff;
+      --purple-dark: #2a1a3e;
+      --dark: #12091c;
+      --text: #2d1f35;
+      --white: #ffffff;
+      --card-bg: rgba(255, 255, 255, 0.92);
+      --shadow: 0 12px 40px rgba(155, 70, 130, 0.12);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #fff5f9;
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* ========== HERO ========== */
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      background: radial-gradient(ellipse at 30% 20%, #5e3a76 0%, #1a0f2e 45%, #0a0612 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 40px 20px;
+    }
+
+    .stars {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(2px 2px at 20px 30px, #fff, transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+        radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+        radial-gradient(2px 2px at 160px 120px, rgba(255,255,255,0.9), transparent),
+        radial-gradient(1px 1px at 230px 80px, #fff, transparent),
+        radial-gradient(2px 2px at 300px 150px, rgba(255,255,255,0.7), transparent);
+      background-size: 350px 200px;
+      opacity: 0.5;
+      animation: twinkle 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.4; }
+      to { opacity: 0.7; }
+    }
+
+    .hero {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .photos {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .photo {
+      width: 200px;
+      height: 250px;
+      object-fit: cover;
+      background: white;
+      padding: 12px 12px 40px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+      border-radius: 4px;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .photo:first-child {
+      transform: rotate(-6deg);
+    }
+
+    .photo:last-child {
+      transform: rotate(6deg);
+    }
+
+    .photo:hover {
+      transform: rotate(0deg) scale(1.05);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+    }
+
+    .warning {
+      display: inline-block;
+      background: rgba(255, 107, 157, 0.2);
+      border: 1px solid rgba(255, 155, 209, 0.4);
+      color: var(--pink-soft);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.6rem, 8vw, 4.8rem);
+      line-height: 1.15;
+      margin-bottom: 18px;
+      color: #fff;
+      text-shadow: 0 0 40px rgba(255, 107, 157, 0.5);
+    }
+
+    .hero h1 span {
+      color: var(--pink-soft);
+    }
+
+    .hero-desc {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.85);
+      max-width: 520px;
+      margin: 0 auto 32px;
+      font-weight: 300;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: none;
+      border-radius: 50px;
+      padding: 15px 28px;
+      background: linear-gradient(135deg, #ff6b9d, #e94c94);
+      color: white;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(233, 76, 148, 0.4);
+      transition: all 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(233, 76, 148, 0.55);
+    }
+
+    .btn:active {
+      transform: translateY(-1px);
+    }
+
+    /* ========== NAV ========== */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 240, 247, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(255, 155, 209, 0.25);
+    }
+
+    nav a {
+      color: #5c3a68;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 8px 14px;
+      border-radius: 50px;
+      transition: all 0.2s ease;
+    }
+
+    nav a:hover {
+      background: rgba(255, 107, 157, 0.15);
+      color: var(--pink);
+    }
+
+    /* ========== SECTIONS ========== */
+    section {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 155, 209, 0.15);
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      color: #d63d82;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .quote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.25rem;
+      color: #8d3d6d;
+      line-height: 1.7;
+      margin: 18px 0;
+    }
+
+    /* ========== QUIZ ========== */
+    .quiz-item {
+      margin: 22px 0;
+    }
+
+    .quiz-item p {
+      font-weight: 500;
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+    }
+
+    .quiz-options {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .quiz-options button {
+      border: 2px solid #e8c4d8;
+      background: white;
+      color: var(--text);
+      border-radius: 50px;
+      padding: 10px 22px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .quiz-options button:hover {
+      border-color: var(--pink);
+      background: var(--pink-light);
+    }
+
+    .quiz-options button.selected {
+      background: linear-gradient(135deg, #9b6dff, #7b4fd4);
+      color: white;
+      border-color: transparent;
+    }
+
+    .result-box {
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg, #fff5fb, #f8f0ff);
+      border: 2px dashed #ff8cbd;
+      border-radius: 18px;
+      padding: 24px;
+      margin-top: 24px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #6b3a5c;
+    }
+
+    /* ========== CATS ========== */
+    .catbox {
+      text-align: center;
+      background: linear-gradient(180deg, #fff8eb, #fff5f0);
+    }
+
+    .cat {
+      font-size: 110px;
+      cursor: pointer;
+      display: inline-block;
+      transition: transform 0.2s ease;
+      user-select: none;
+      line-height: 1;
+      margin: 10px 0;
+    }
+
+    .cat:hover {
+      transform: scale(1.1);
+    }
+
+    .cat:active {
+      transform: scale(0.85) rotate(-10deg);
+    }
+
+    #catMsg {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #c45c2a;
+      min-height: 32px;
+      margin: 12px 0;
+    }
+
+    /* ========== GALLERY ========== */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item img:hover {
+      transform: scale(1.02);
+    }
+
+    .gallery-item .quote {
+      font-size: 1.05rem;
+      margin-top: 14px;
+    }
+
+    /* ========== NOTE ========== */
+    .note p {
+      margin-bottom: 16px;
+      font-size: 1.08rem;
+      line-height: 1.8;
+    }
+
+    .note b {
+      color: #d63d82;
+    }
+
+    /* ========== FINAL ========== */
+    .final {
+      background: linear-gradient(160deg, #180d27, #2a1540);
+      color: white;
+      text-align: center;
+      border-radius: 28px;
+      padding: 50px 28px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    }
+
+    .final h2 {
+      color: var(--pink-soft);
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    .final h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    .final > p {
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 28px;
+      font-size: 1.1rem;
+    }
+
+    .final h3 {
+      font-weight: 500;
+      margin-bottom: 20px;
+      font-size: 1.15rem;
+    }
+
+    .final-btns {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    #noBtn {
+      background: #555;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    }
+
+    #noBtn:hover {
+      background: #666;
+    }
+
+    #finalMsg {
+      margin-top: 22px;
+      font-size: 1.15rem;
+      font-weight: 500;
+      min-height: 28px;
+      color: var(--pink-soft);
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      text-align: center;
+      padding: 36px 20px;
+      color: #9b6b85;
+      font-size: 0.95rem;
+    }
+
+    /* ========== HEARTS ========== */
+    .heart {
+      position: fixed;
+      pointer-events: none;
+      font-size: 22px;
+      animation: floatUp 2.2s ease-out forwards;
+      z-index: 999;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-140px) scale(1.6);
+        opacity: 0;
+      }
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 600px) {
+      .photo {
+        width: 150px;
+        height: 190px;
+        padding: 10px 10px 32px;
+      }
+
+      .card {
+        padding: 28px 20px;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      .gallery-item img {
+        height: 240px;
+      }
+
+      nav a {
+        font-size: 0.88rem;
+        padding: 7px 11px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header>
+    <div class="stars"></div>
+    <div class="hero">
+      <div class="photos">
+        <img class="photo" src="images/twin1.jpg" alt="Twin photo">
+        <img class="photo" src="images/twin2.jpg" alt="Twin photo">
+      </div>
+      <div class="warning">⚠️ Warning ⚠️</div>
+      <h1>You Have Entered<br><span>Twin Territory</span> 💗</h1>
+      <p class="hero-desc">Chaos • yapping • cats • and one ridiculously special bestie.</p>
+      <button class="btn" onclick="document.getElementById('home').scrollIntoView({behavior:'smooth'})">
+        I Accept The Chaos 😼
+      </button>
+    </div>
+  </header>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#test">🧪 Twin Test</a>
+    <a href="#cats">🐱 Cats</a>
+    <a href="#gallery">📸 Photos</a>
+    <a href="#note">💌 Note</a>
+    <a href="#final">✨ Last Thing</a>
+  </nav>
+
+  <!-- WELCOME -->
+  <section id="home">
+    <div class="card">
+      <h2>🌙 Welcome to your tiny universe</h2>
+      <p class="quote">“Some people enter your life randomly. Somehow, they end up feeling like home.”</p>
+      <p style="font-size:1.08rem; margin-top:12px;">This little corner of the internet exists for one reason: to remind my chaotic twin that she is genuinely appreciated.</p>
+    </div>
+  </section>
+
+  <!-- TWIN TEST -->
+  <section id="test">
+    <div class="card">
+      <h2>🧪 Twin Test</h2>
+      <p style="margin-bottom:8px; color:#666;">Let's prove we're actually chaotic twins. Pick your answers honestly. 😭</p>
+      
+      <div class="quiz-item">
+        <p>Who yaps more?</p>
+        <div class="quiz-options">
+          <button onclick="pick(this)">Me</button>
+          <button onclick="pick(this)">Him</button>
+        </div>
+      </div>
+
+      <div class="quiz-item">
+        <p>Who is more chaotic?</p>
+        <div class="quiz-options">
+          <button onclick="pick(this)">Me</button>
+          <button onclick="pick(this)">Him</button>
+        </div>
+      </div>
+
+      <div class="quiz-item">
+        <p>Who sends more random messages?</p>
+        <div class="quiz-options">
+          <button onclick="pick(this)">Me</button>
+          <button onclick="pick(this)">Him</button>
+        </div>
+      </div>
+
+      <div class="quiz-item">
+        <p>Who is more likely to start a completely unnecessary deep conversation?</p>
+        <div class="quiz-options">
+          <button onclick="pick(this)">Me</button>
+          <button onclick="pick(this)">Him</button>
+        </div>
+      </div>
+
+      <div class="quiz-item">
+        <p>Who would survive a zombie apocalypse?</p>
+        <div class="quiz-options">
+          <button onclick="pick(this)">Me</button>
+          <button onclick="pick(this)">Him</button>
+        </div>
+      </div>
+
+      <button class="btn" style="margin-top:20px;" onclick="showResult()">✨ Show My Results ✨</button>
+      
+      <div class="result-box" id="result">
+        Your scientific twin results will appear here. 🔬
+      </div>
+    </div>
+  </section>
+
+  <!-- CATS -->
+  <section id="cats">
+    <div class="card catbox">
+      <h2 style="justify-content:center; color:#c45c2a;">🐱 Random Cat Button</h2>
+      <p style="color:#8a6a4a;">Click the cat. Do it. Right now.</p>
+      <div class="cat" onclick="petCat()">🐱</div>
+      <h3 id="catMsg">Waiting for a victim...</h3>
+      <p style="color:#a07a5a; font-size:0.95rem;">Warning: may cause uncontrollable cuteness.</p>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="card">
+      <h2>📸 Little Gallery</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="images/twin1.jpg" alt="Twin photo">
+          <p class="quote">“You don't have to be perfect to be wonderful. Just being yourself is already enough.”</p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/twin2.jpg" alt="Twin photo">
+          <p class="quote">“Some people are beautiful in ways that have nothing to do with perfection.”</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTE -->
+  <section id="note">
+    <div class="card">
+      <h2>💌 A Note For My Twin</h2>
+      <div class="note">
+        <p>Okay, jokes aside...</p>
+        <p>I genuinely wanted to make this because you're one of those people who can turn a bad mood into a better one just by being yourself.</p>
+        <p>Your yapping? <b>10/10.</b> Your random thoughts? Somehow even better. 😭 I love how you always like my notes too — it makes the little things I do feel special.</p>
+        <p>Thank you for being my chaotic twin, my bestie, and one of the people who can make an ordinary day feel a lot less ordinary.</p>
+        <p>And if you ever feel insecure about yourself, please remember this: <b>you don't need to change yourself to deserve kindness, friendship, or happiness.</b> The things that make you uniquely you are worth appreciating.</p>
+        <p class="quote">“You are allowed to be exactly who you are and still be someone worth celebrating.” 💗</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section id="final">
+    <div class="final">
+      <h2>One Last Thing...</h2>
+      <h1>You're stuck with me as your chaotic twin. ♾️💗</h1>
+      <p>No refunds. No exchanges. Forever besties. 😭</p>
+      <h3>Do you accept your twin contract? 👀</h3>
+      <div class="final-btns">
+        <button class="btn" onclick="yes()">YESSSS 💗</button>
+        <button class="btn" id="noBtn" onclick="nope()">No 😶</button>
+      </div>
+      <p id="finalMsg"></p>
+    </div>
+  </section>
+
+  <footer>Made with 💗 for my chaotic twin • Forever us ✨</footer>
+
+  <script>
+    let answers = 0;
+
+    function pick(btn) {
+      const siblings = btn.parentElement.querySelectorAll('button');
+      siblings.forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      answers = document.querySelectorAll('.quiz-options button.selected').length;
+    }
+
+    function showResult() {
+      const resultEl = document.getElementById("result");
+      if (answers >= 3) {
+        resultEl.innerHTML = "🏆 <strong>OFFICIAL RESULT: CHAOTIC TWINS!</strong><br>100% bestie material. The science is undeniable. 😭💗";
+      } else {
+        resultEl.innerHTML = "🔬 <strong>RESULT:</strong> Insufficient data.<br>You need more chaos together. 😼";
+      }
+    }
+
+    function petCat() {
+      const msgs = [
+        "MEOW! Your twin has been summoned! 🐱",
+        "+100 serotonin unlocked! 💗",
+        "The cat approves of this friendship.",
+        "Emergency yapping session incoming! 😭",
+        "You have been blessed by the twin cat. ✨",
+        "Purrfect friendship detected. 😻",
+        "Chaos level increased by 47%."
+      ];
+      document.getElementById("catMsg").textContent = msgs[Math.floor(Math.random() * msgs.length)];
+      
+      for (let i = 0; i < 7; i++) {
+        const h = document.createElement("span");
+        h.className = "heart";
+        h.textContent = "💗";
+        h.style.left = (30 + Math.random() * 40) + "%";
+        h.style.top = "50%";
+        h.style.fontSize = (18 + Math.random() * 14) + "px";
+        document.body.appendChild(h);
+        setTimeout(() => h.remove(), 2200);
+      }
+    }
+
+    function yes() {
+      document.getElementById("finalMsg").textContent = "CORRECT ANSWER 😭💗 Twin contract accepted. You are officially stuck with me.";
+    }
+
+    function nope() {
+      const btn = document.getElementById("noBtn");
+      btn.style.transform = "scale(0.7)";
+      btn.style.opacity = "0.35";
+      btn.style.pointerEvents = "none";
+      document.getElementById("finalMsg").textContent = "Nice try. The No button is suspiciously malfunctioning. 😭";
+    }
+  </script>
+</body>
+</html>
